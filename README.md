@@ -10,3 +10,25 @@
 ## Technologie
 * PHP
 * SQL
+
+# OcenaPlynnosciFinanowej
+
+## Technologie
+* AitechSPHINX
+
+# ZaliczenieSemestu
+
+## Technologie
+* AitechSPHINX
+
+# AimCourse
+
+## Technologie
+* JavaScript
+* Html 5
+* CSS
+
+# WlasneWersjeMetod
+
+# Technologie
+* Java
