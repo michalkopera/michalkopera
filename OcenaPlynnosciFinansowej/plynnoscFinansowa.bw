@@ -1,0 +1,87 @@
+knowledge base nazwa
+sources
+       zr1:
+       type kb file "plynnosc.zw";
+end;
+
+ control
+ 
+ function analizaFn
+ begin
+    //messageBox(0,0,"Komunikat","Opcja w budowie");
+    
+    //pobranie wartosci z arkusza kalk.(getSheetRange lub getSheetValue 4x)
+    double PlynnoscBiezacy, PlynnoscSzybki, CyklNaleznosci, CyklZobowiazan;
+    getSheetValue("Dane wejúciowe", "", 7, 6, PlynnoscBiezacy);
+    getSheetValue("Dane wejúciowe", "", 8, 6, PlynnoscSzybki);
+    getSheetValue("Dane wejúciowe", "", 11, 6, CyklNaleznosci);
+    getSheetValue("Dane wejúciowe", "", 12, 6, CyklZobowiazan);
+    
+    //wywolanie funkcji addFact(zbiorowo lub pojedynczo)
+    addFact( _, wskaünik_p≥ynnoúci_bieøπcej, PlynnoscBiezacy);
+    addFact( _, wskaünik_p≥ynnoúci_szybkiej, PlynnoscSzybki);
+    addFact( _, cykl_rozliczeniowy_naleønoúci, CyklNaleznosci);
+    addFact( _, cykl_rozliczeniowy_zobowiπzaÒ, CyklZobowiazan);
+    
+    //wywolac funkcje solve()
+    solve(zr1, "ocena_p≥ynnoúci_finansowej = Ocena");
+    
+    delNewFacts;
+ end;
+ 
+ function koniecFn
+ begin
+    mainMenu;
+ end;
+ 
+ function otworzFn
+ begin
+     openSheet( "Dane wejúciowe", "plynnosc_5.xls");
+ end;
+ 
+ function zapiszFn
+ begin
+     writeSheet("Dane wejúciowe", "plynnosc_5.xls");
+ end;
+ 
+ function zobaczFn
+ begin
+      showSheet("Dane wejúciowe", 1);
+ end;
+ 
+ function winietaFn
+ begin
+      vignette("Ocena p≥ynnoúci finansowej", "Przyk≥adowa aplikacja", "© 2020 AITECH");
+ end;
+ 
+ run;
+ createAppWindow;
+ setAppWinTitle("Ocena p≥ynnoúci finansowej");
+ vignette("Ocena p≥ynnoúci finansowej", "Przyk≥adowa aplikacja", "© 2020 AITECH");
+ 
+ int Menu, Dane, Analiza, Arkusze, Pomoc;
+ 
+ createMenu(Menu);
+ createPopupMenu(Dane, "Dane");
+ appendMenu(Dane, "Otworz", otworzFn);
+ appendMenu(Dane, "Zapisz", zapiszFn);
+ appendMenu(Dane, separator, "");
+ appendMenu(Dane, "Koniec", koniecFn);
+ appendMenu(Menu, menu, Dane);
+ 
+ createPopupMenu(Arkusze, "Arkusze");
+ appendMenu(Arkusze, "Wskazniki plynnosci", zobaczFn);
+ appendMenu(Menu, menu, Arkusze);
+ 
+ createPopupMenu(Analiza, "Analiza");
+ appendMenu(Analiza, "Plynnosci", analizaFn);
+ appendMenu(Menu, menu, Analiza);
+ 
+ createPopupMenu(Pomoc, "Pomoc");
+ appendMenu(Pomoc, "O programie", winietaFn);
+ appendMenu(Menu, menu, Pomoc);
+ 
+ fullMenu(Menu);
+ 
+ end;
+end;

@@ -1,0 +1,99 @@
+knowledge base nazwa
+ facets
+ single yes;
+ ocena_p³ynnoœci_finansowej:
+ val oneof{"p³ynnoœæ bardzo dobra", "p³ynnoœæ dobra", "p³ynnoœæ zagro¿ona"};
+ ocena_p³ynnoœci_bie¿¹cej:
+ val oneof{"dobra", "przeciêtna", "z³a"};
+ ocena_p³ynnoœci_szybkiej:
+ val oneof{"dobra", "przeciêtna", "z³a"};
+ ocena_cyklu_rozliczeniowego:
+ val oneof{"zadawalaj¹ca", "z³a"};
+ wskaŸnik_p³ynnoœci_bie¿¹cej:
+ val range<0,10>;
+ wskaŸnik_p³ynnoœci_szybkiej:
+ val range<0,10>;
+ cykl_rozliczeniowy_nale¿noœci:
+ val range<0,3660>;
+ cykl_rozliczeniowy_zobowi¹zañ:
+ val range<0,3660>;
+ 
+ end;
+ rules
+ 
+ 1: ocena_p³ynnoœci_bie¿¹cej = "dobra" if
+ wskaŸnik_p³ynnoœci_bie¿¹cej = X, X >= 1.5;
+ 
+ 2: ocena_p³ynnoœci_bie¿¹cej = "przeciêtna" if
+ wskaŸnik_p³ynnoœci_bie¿¹cej = X, X >= 1,
+ X < 1.5;
+ 
+ 3: ocena_p³ynnoœci_bie¿¹cej = "z³a" if
+ wskaŸnik_p³ynnoœci_bie¿¹cej = X, X < 1;
+ 
+ 
+ 4: ocena_p³ynnoœci_szybkiej = "dobra" if
+ wskaŸnik_p³ynnoœci_szybkiej = X, X >= 1;
+ 
+ 5: ocena_p³ynnoœci_szybkiej = "przeciêtna" if
+ wskaŸnik_p³ynnoœci_szybkiej = X, X >= 0.8,
+ X < 1;
+ 
+ 6: ocena_p³ynnoœci_szybkiej = "z³a" if
+ wskaŸnik_p³ynnoœci_szybkiej = X, X < 0.8;
+ 
+ 
+ 7: ocena_cyklu_rozliczeniowego = "zadawalaj¹ca" if
+ cykl_rozliczeniowy_nale¿noœci = X, X > 60,
+ cykl_rozliczeniowy_zobowi¹zañ = Y,
+ X >= Y;
+ 
+ 8: ocena_cyklu_rozliczeniowego = "z³a" if
+ cykl_rozliczeniowy_nale¿noœci = X, X <= 60 |
+ cykl_rozliczeniowy_zobowi¹zañ = Y,
+ X < Y;
+ 
+ 
+ 9: ocena_p³ynnoœci_finansowej = "p³ynnoœæ bardzo dobra" if
+ ocena_p³ynnoœci_bie¿¹cej = "dobra",
+ ocena_p³ynnoœci_szybkiej = "dobra",
+ ocena_cyklu_rozliczeniowego = "zadawalaj¹ca";
+ 
+ 10: ocena_p³ynnoœci_finansowej = "p³ynnoœæ bardzo dobra" if
+ ocena_p³ynnoœci_bie¿¹cej = "dobra",
+ ocena_p³ynnoœci_szybkiej = "przeciêtna",
+ ocena_cyklu_rozliczeniowego = "zadawalaj¹ca";
+ 
+ 11: ocena_p³ynnoœci_finansowej = "p³ynnoœæ bardzo dobra" if
+ ocena_p³ynnoœci_bie¿¹cej = "przeciêtna",
+ ocena_p³ynnoœci_szybkiej = "dobra",
+ ocena_cyklu_rozliczeniowego = "zadawalaj¹ca";
+ 
+ 
+ 12: ocena_p³ynnoœci_finansowej = "p³ynnoœæ dobra" if
+ ocena_p³ynnoœci_bie¿¹cej = "przeciêtna",
+ ocena_p³ynnoœci_szybkiej = "przeciêtna",
+ ocena_cyklu_rozliczeniowego = "zadawalaj¹ca";
+ 
+ 13: ocena_p³ynnoœci_finansowej = "p³ynnoœæ dobra" if
+ ocena_p³ynnoœci_bie¿¹cej = "dobra",
+ ocena_p³ynnoœci_szybkiej = "dobra",
+ ocena_cyklu_rozliczeniowego = "z³a";
+ 
+ 
+ 14: ocena_p³ynnoœci_finansowej = "p³ynnoœæ zagro¿ona" if
+ ocena_p³ynnoœci_bie¿¹cej = "z³a";
+ 
+ 15: ocena_p³ynnoœci_finansowej = "p³ynnoœæ zagro¿ona" if
+ ocena_p³ynnoœci_szybkiej = "z³a";
+ 
+ 16: ocena_p³ynnoœci_finansowej = "p³ynnoœæ zagro¿ona" if
+ ocena_p³ynnoœci_szybkiej = "przeciêtna",
+ ocena_cyklu_rozliczeniowego = "z³a";
+ 
+ 17: ocena_p³ynnoœci_finansowej = "p³ynnoœæ zagro¿ona" if
+ ocena_p³ynnoœci_bie¿¹cej = "przeciêtna",
+ ocena_cyklu_rozliczeniowego = "z³a";
+ 
+ end;
+end;
