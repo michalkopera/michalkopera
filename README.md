@@ -37,7 +37,7 @@ Projekt wykonany w szkieletowym systemie ekspertowym ocenia na podstawie kilku i
 ## AimCourse
 
 #### Ogólne informacje
-Gra polegająca na klikaniu w punkty pojawiające się w różnych miejscach ekranu za pomocą kursora myszy, wykonana z pomocą gotowego, open-sourcowego algorytmu mainloop.js.
+Gra polegająca na klikaniu w punkty pojawiające się w różnych miejscach ekranu za pomocą kursora myszy, wykonana z pomocą gotowego algorytmu mainloop.js na licencji GIT.
 
 #### Technologie
 * JavaScript
