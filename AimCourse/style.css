@@ -1,0 +1,265 @@
+body{
+	cursor: crosshair;
+}
+
+canvas { 
+	border: solid 1px black;
+}
+
+#holder {
+	display:block;
+	margin: 20px auto 0 auto;
+	width:800px;
+	height:600px;
+	background: #FF4010;
+	position: relative;
+}
+
+#klik {
+	font-family:fantasy;
+}
+
+.lvl1{
+float: left;
+cursor: pointer;
+width: 140px;
+padding: 20px 25px;
+background-color: #a5d5ee;
+color: #14658f;
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+border: 1px solid #2f7ea7;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 -1px 0 rgba(64, 38, 5, 0.9);
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-transition: background 0.2s ease-out;
+
+position: absolute;
+left:300px;
+top: 150px;
+
+}
+
+.lvl1:hover {
+background: #f6a000;
+position: absolute;
+left:300px;
+top: 150px;
+border: 1px solid #702d00;
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+} 
+
+.lvl2{
+float: left;
+cursor: pointer;
+width: 140px;
+padding: 20px 25px;
+background-color: #a5d5ee;
+color: #14658f;
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+border: 1px solid #2f7ea7;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 -1px 0 rgba(64, 38, 5, 0.9);
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-transition: background 0.2s ease-out;
+
+position: absolute;
+left:300px;
+top: 250px;
+
+}
+
+.lvl2:hover {
+background: #f6a000;
+position: absolute;
+left:300px;
+top: 250px;
+border: 1px solid #702d00;
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+}
+
+.lvl3{
+float: left;
+cursor: pointer;
+width: 140px;
+padding: 20px 25px;
+background-color: #a5d5ee;
+color: #14658f;
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+border: 1px solid #2f7ea7;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 -1px 0 rgba(64, 38, 5, 0.9);
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-transition: background 0.2s ease-out;
+
+position: absolute;
+left:300px;
+top: 350px;
+
+}
+
+.lvl3:hover {
+background: #f6a000;
+position: absolute;
+left:300px;
+top: 350px;
+border: 1px solid #702d00;
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+}
+
+.lvl4{
+float: left;
+cursor: pointer;
+width: 140px;
+padding: 20px 25px;
+background-color: #a5d5ee;
+color: #14658f;
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+border: 1px solid #2f7ea7;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 -1px 0 rgba(64, 38, 5, 0.9);
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+-webkit-transition: background 0.2s ease-out;
+
+position: absolute;
+left:300px;
+top: 450px;
+
+}
+
+.lvl4:hover {
+background: #f6a000;
+position: absolute;
+left:300px;
+top: 450px;
+border: 1px solid #702d00;
+
+-moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+-webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6), 
+inset 0 1px 2px rgba(255, 255, 255, 0.7), 
+0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+}
+
+#tekst {
+	font-family: Luminari, fantasy;
+	font-size: 45pt;
+	display:inline;
+	color: black;
+	font: 20pt;
+	text-align: center;
+	position: absolute;
+	left: 260px;
+	top: 40px; 
+}
+
