@@ -1,0 +1,89 @@
+knowledge base semestr
+facets
+
+single yes;
+wynik_semestru:
+val oneof {"semestr_zaliczony", "powtarzanie", "skreslenie", 
+          "tryb_poprawkowy_w_nastepnej_sesji", "tryb_poprawkowy_w_biezacej_sesji"};
+punkty_ects:
+val range <0,50>;
+zlozyl_wniosek_o_tryb_poprawkowy:
+val oneof {"tak", "nie"};
+stopien_studiow:
+val oneof{"1", "2"};
+semestr_studiow:
+val range<1,6>;
+powtarzal_semestr:
+val oneof {"tak", "nie"};
+student_pierwszego_roku_lic:
+val oneof {"tak", "nie"};
+student_ostatniego_semestru:
+val oneof {"tak", "nie"};
+tryb_poprawkowy:
+val oneof {"tak", "nie"};
+
+
+end;
+
+rules
+wynik_semestru = "semestr_zaliczony" if
+punkty_ects = X, X >=30;
+
+tryb_poprawkowy = "tak" if
+punkty_ects = X, X >= 18,
+X < 30;
+
+wynik_semestru = "powtarzanie" if
+punkty_ects = X, X <18,
+powtarzal_semestr = "nie",
+zlozyl_wniosek_o_tryb_poprawkowy = "tak",
+student_pierwszego_roku_lic = "nie";
+
+wynik_semestru = "skreslenie" if
+punkty_ects = X, X <18,
+powtarzal_semestr = "tak";
+
+wynik_semestru = "skreslenie" if
+punkty_ects = X, X <18,
+powtarzal_semestr = "nie",
+zlozyl_wniosek_o_tryb_poprawkowy = "nie"; 
+
+wynik_semestru = "skreslenie" if
+punkty_ects = X, X <18,
+student_pierwszego_roku_lic = "tak";
+
+wynik_semestru = "tryb_poprawkowy_w_nastepnej_sesji" if
+student_ostatniego_semestru = "nie",
+tryb_poprawkowy = "tak";
+
+wynik_semestru = "tryb_poprawkowy_w_biezacej_sesji" if
+student_ostatniego_semestru = "tak",
+tryb_poprawkowy = "tak";
+
+student_pierwszego_roku_lic = "tak" if
+stopien_studiow = X, X == 1,
+semestr_studiow = Y, Y <=2;
+
+student_ostatniego_semestru = "tak" if
+stopien_studiow = X, X == 1,
+semestr_studiow = Y, Y == 6;
+
+student_ostatniego_semestru = "tak" if
+stopien_studiow = X, X == 2,
+semestr_studiow = Y, Y == 4;
+
+student_pierwszego_roku_lic = "nie" if
+stopien_studiow = X, X == 2 |
+semestr_studiow = Y, Y > 2;
+
+student_ostatniego_semestru = "nie" if
+stopien_studiow = X, X == 1,
+semestr_studiow = Y, Y <> 6;
+
+student_ostatniego_semestru = "nie" if
+stopien_studiow = X, X == 2,
+semestr_studiow = Y, Y <> 4;  
+
+end;
+
+end;       
