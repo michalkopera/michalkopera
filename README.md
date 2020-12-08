@@ -7,7 +7,7 @@
 
 # Logowanie
 
-## Technologie
+#### Technologie
 * PHP
 * SQL
 
