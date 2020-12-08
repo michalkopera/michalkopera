@@ -16,7 +16,7 @@
 ## Technologie
 * AitechSPHINX
 
-# ZaliczenieSemestu
+# ZaliczenieSemestru
 
 ## Technologie
 * AitechSPHINX
